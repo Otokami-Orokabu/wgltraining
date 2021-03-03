@@ -1,5 +1,6 @@
 import path from "path";
 import webpack from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const config: webpack.Configuration ={
     mode: `development`,
@@ -27,6 +28,11 @@ const config: webpack.Configuration ={
             '.ts', '.tsx', '.js', '.json',
         ],
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./src/index.html"
+        })
+    ]
 };
 
 export default config;
